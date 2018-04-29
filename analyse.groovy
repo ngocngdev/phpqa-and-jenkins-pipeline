@@ -17,7 +17,7 @@ def composerInstall() {
 def phpcs(srcPaths) {
     phpQa('phpcs --report=checkstyle --report-file=build/logs/checkstyle.xml --standard=PSR2 --encoding=UTF-8 --ignore="*.js" ' + srcPaths.join(' ') + ' || exit 0')
 
-    replaceFilePath('build/logs/checkstyle.xml')
+    //replaceFilePath('build/logs/checkstyle.xml')
     checkstyle pattern: 'build/logs/checkstyle.xml'
 }
 
@@ -32,7 +32,7 @@ def phpmetrics(srcPaths) {
 
 def phpmd(srcPaths) {
     phpQa('phpmd ' + srcPaths.join(',') + ' xml cleancode,codesize,unusedcode --reportfile build/logs/pmd.xml || exit 0')
-    replaceFilePath('build/logs/pmd.xml')
+    //replaceFilePath('build/logs/pmd.xml')
     pmd canRunOnFailed: true, pattern: 'build/logs/pmd.xml'
 }
 
@@ -44,7 +44,7 @@ def phpmnd(srcPaths) {
 
 def phpcpd(srcPaths) {
     phpQa('phpcpd --log-pmd build/logs/pmd-cpd.xml ' + srcPaths.join(' ') + ' || exit 0')
-    replaceFilePath('build/logs/pmd-cpd.xml')
+    //replaceFilePath('build/logs/pmd-cpd.xml')
     dry canRunOnFailed: true, pattern: 'build/logs/pmd-cpd.xml'
 }
 
