@@ -51,7 +51,7 @@ node('docker') {
                 )
             }
             stage("publishHTMLReport"){
-                analyse.publishHTMLReport()
+                analyse.publishHTMLReport(reportDir, file, reportName)
             }
         }
     }
