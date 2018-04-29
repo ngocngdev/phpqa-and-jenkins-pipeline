@@ -1,5 +1,5 @@
 def phpQa(attribute) {
-    sh 'docker run --rm -v $(pwd):/project -w /project jakzal/phpqa ' + attribute
+    sh 'docker run --rm -v /testenv/jenkins2/workspace/test-app-1/symfony-demo:/project -w /project jakzal/phpqa ' + attribute
 }
 
 def pull() {
