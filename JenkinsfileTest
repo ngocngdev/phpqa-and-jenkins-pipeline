@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-String[] srcPaths = ["./config/", "./src/Controller/", "./src/DataFixtures/", "./src/Entity/", "./src/EventSubscriber/", "./src/Form/", "./src/Migrations/", "./src/Repository/", "./src/Security/", "./src/Twig/", "./src/Utils/"]
+String[] srcPaths = ["./src/Controller/", "./src/DataFixtures/", "./src/Entity/", "./src/EventSubscriber/", "./src/Form/", "./src/Migrations/", "./src/Repository/", "./src/Security/", "./src/Twig/", "./src/Utils/"]
 
 buildDiscarder(logRotator(
     daysToKeepStr        : 14,
