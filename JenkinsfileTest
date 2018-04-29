@@ -15,7 +15,7 @@ node('docker') {
         stage('Checkout') {
             checkout scm
             analyse = load 'analyse.groovy'
-            #setupSymfonyDemo("1.2.2")
+            //setupSymfonyDemo("1.2.2")
         }
         stage('Pulling') {
             analyse.pull()
@@ -54,8 +54,8 @@ node('docker') {
     }
 }
 
-#def setupSymfonyDemo(version) {
-#    sh "rm -rf symfony-demo* demo*"
-#    sh "curl -o symfony-demo.tar.gz https://codeload.github.com/symfony/demo/tar.gz/v${version}"
-#    sh "tar -xzf symfony-demo.tar.gz && mv demo-${version} symfony-demo"
-#}
+//def setupSymfonyDemo(version) {
+//    sh "rm -rf symfony-demo* demo*"
+//    sh "curl -o symfony-demo.tar.gz https://codeload.github.com/symfony/demo/tar.gz/v${version}"
+//    sh "tar -xzf symfony-demo.tar.gz && mv demo-${version} symfony-demo"
+//}
